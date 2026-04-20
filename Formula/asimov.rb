@@ -10,31 +10,12 @@ class Asimov < Formula
 
   def install
     bin.install "asimov"
-    (prefix/"com.django23.asimov.plist").write <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>Label</key><string>com.django23.asimov</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/asimov</string>
-        </array>
-        <key>RunAtLoad</key><true/>
-        <key>StartCalendarInterval</key>
-        <dict>
-          <key>Hour</key><integer>12</integer>
-          <key>Minute</key><integer>0</integer>
-        </dict>
-      </dict>
-      </plist>
-    EOS
   end
 
   service do
     run [opt_bin/"asimov"]
-    run_type :cron
-    cron "0 12 * * *"
+    run_type :interval
+    interval 86_400
   end
 
   test do
