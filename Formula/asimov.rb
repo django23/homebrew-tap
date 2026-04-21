@@ -1,10 +1,10 @@
 class Asimov < Formula
   desc "Exclude development dependencies from Time Machine backups"
   homepage "https://github.com/django23/asimov"
-  url "https://github.com/django23/asimov/archive/refs/tags/v0.6.2.tar.gz"
-  sha256 "f1cb37c2d9ae272a11f667cabdcae96e228280d383a191a57e49719a9a2e5e4b"
+  url "https://github.com/django23/asimov/archive/refs/tags/v0.6.3.tar.gz"
+  sha256 "99ba9848a7b44ac4ae2c61bc71603e02a9ba305089344fbad5ac8fdcaedec9ed"
   license "MIT"
-  version "0.6.2"
+  version "0.6.3"
 
   depends_on :macos
 
